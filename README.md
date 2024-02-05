@@ -20,3 +20,13 @@ Effizienz
 Robustheit
 
 (Nutzung von PEP8)
+
+
+# Programm Ablauf:
+ (Funktionalität)
+- Als erstes die Eingabe von Räumen.
+- danach direkt abfragen bsp. Die Bezeichnung vom Raum, die Länge und die Breite (In Meter).
+- Berechnung der jeweiligen Raumgrößen.
+- Nachdem der Vorgang beliebig oft ausgeführt wurde (Raumanzahl) wird nun die Gesamtfläche berechnet.
+- Ausgabe der Raumbezeichnung mit Raumgröße
+- Ausgabe der Gesamtfläche
