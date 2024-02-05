@@ -3,5 +3,6 @@ class Raum:
         self.name = name
         self.laenge = laenge
         self.breite = breite
+        self.raumgroesse = laenge * breite
 
 raeume = input("")
