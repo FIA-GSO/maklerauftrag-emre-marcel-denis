@@ -1,6 +1,7 @@
-laenge = input("")
-breite = input("")
-raumgroeße = 0
-raumbezeichnung = input("")
+class Raum:
+    def __init__(self, laenge, breite, name):
+        self.name = name
+        self.laenge = laenge
+        self.breite = breite
+
 raeume = input("")
-gesamtflaeche = 0
