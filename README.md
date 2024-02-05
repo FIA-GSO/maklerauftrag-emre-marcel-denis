@@ -6,7 +6,7 @@
 1) Eingabe der Raummaße in Metern und Berechnung der Raumgrößen
 2) Eingabe der Raumbezeichnung (Küche, Bad Schlafzimmer)
 3) Berechnung der Gesamtfläche
-4) Ausgabe der Raumgröpßen mit Bezeichnung
+4) Ausgabe der Raumgrößen mit Bezeichnung
 5) Ausgabe der Gesamtfläche 
 
 Nicht-funktionale Anforderung
