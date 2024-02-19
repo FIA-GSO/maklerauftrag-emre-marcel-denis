@@ -20,10 +20,16 @@ def raum_abfrage(num):
 
     return alle_raeume
 
+
+def raum_ausgeben(alle_raeume, num):
+    for i in range(num):
+        print(alle_raeume[num])
+
+
 # print("Dein Gebäude hat " + str(raeume) + " Räume und der Name des Raumes lautet: " + Raum.name + " Die länge beträgt: " + str(Raum.laenge) + "m und die Breite beträgt: " + str(Raum.breite) + " Die Raumgröße ist: " {Raum.raumgroesse})
 # print("Dein Gebäude hat " + raeume + " Rä)
 
 if __name__ == '__main__':
     raeume = int(input("Hey Makler, Gebe die Anzahl an Räumen an welches das Gebäude hat: "))
     alle_raeume = raum_abfrage(raeume)
-    print(alle_raeume)
+    raum_ausgeben(alle_raeume, raeume)
