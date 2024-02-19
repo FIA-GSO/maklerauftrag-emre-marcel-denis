@@ -12,6 +12,7 @@ def raum_abfrage(num):
             Raum.name = str(input("Wie ist der Name deines Raumes? "))
             Raum.laenge = int(input("Gebe die Länge deines Raumes (in Metern) an: "))
             Raum.breite = int(input("Gebe die Breite deines Raumes (in Metern) an: "))
+            Raum.raumgroesse = Raum.laenge * Raum.breite
 
             alle_raeume.append(Raum)
         except ValueError:
@@ -25,5 +26,4 @@ def raum_abfrage(num):
 if __name__ == '__main__':
     raeume = int(input("Hey Makler, Gebe die Anzahl an Räumen an welches das Gebäude hat: "))
     alle_raeume = raum_abfrage(raeume)
-    print(Raum)
-    print(alle_raeume[0])
+    print(alle_raeume)
