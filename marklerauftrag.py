@@ -5,19 +5,25 @@ class Raum:
         self.breite = breite
         self.raumgroesse = laenge * breite
 
-raeume = 0
+def raum_abfrage(num):
+    alle_raeume = []
+    for i in range(num):
+        try: 
+            Raum.name = str(input("Wie ist der Name deines Raumes? "))
+            Raum.laenge = int(input("Gebe die Länge deines Raumes (in Metern) an: "))
+            Raum.breite = int(input("Gebe die Breite deines Raumes (in Metern) an: "))
 
-while True:
-    try: 
-        raeume = int(input("Hey Makler, Gebe die Anzahl an Räumen an welches das Gebäude hat: "))
-        Raum.name = str(input("Wie ist der Name deines Raumes? "))
-        Raum.laenge = int(input("Gebe die Länge deines Raumes (in Metern) an: "))
-        Raum.breite = int(input("Gebe die Breite deines Raumes (in Metern) an: "))
-        break
-    except ValueError:
-        print("Die Eingabe ist Falsch, bitte erneut eingeben.")
+            alle_raeume.append(Raum)
+        except ValueError:
+            print("Die Eingabe ist Falsch, bitte erneut eingeben.")
 
-input("einfach nur nen test")
+    return alle_raeume
 
 # print("Dein Gebäude hat " + str(raeume) + " Räume und der Name des Raumes lautet: " + Raum.name + " Die länge beträgt: " + str(Raum.laenge) + "m und die Breite beträgt: " + str(Raum.breite) + " Die Raumgröße ist: " {Raum.raumgroesse})
 # print("Dein Gebäude hat " + raeume + " Rä)
+
+if __name__ == '__main__':
+    raeume = int(input("Hey Makler, Gebe die Anzahl an Räumen an welches das Gebäude hat: "))
+    alle_raeume = raum_abfrage(raeume)
+    print(Raum)
+    print(alle_raeume[0])
