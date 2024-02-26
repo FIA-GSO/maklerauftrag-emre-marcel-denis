@@ -1,43 +1,42 @@
 class Raum:
-    def __init__(self, laenge, breite, name, raumgroesse):
+    def __init__(self, name):
         self.name = name
-        self.laenge = laenge
-        self.breite = breite
-        self.groesse = laenge * breite
+        self.teilraeume = []
+        self.groesse = 0
 
+    def add_teilraum(self, laenge, breite):
+        self.teilraeume.append((laenge, breite))
+        self.groesse += laenge * breite
 
 def raum_abfrage(num):
     alle_raeume = []
     for i in range(num):
-        try: 
+        try:
             name = str(input("\nWie ist der Name deines Raumes? "))
-            laenge = int(input("Gebe die Länge deines Raumes (in Metern) an: "))
-            breite = int(input("Gebe die Breite deines Raumes (in Metern) an: "))
-            groesse = laenge * breite
-
-            raum = (name, laenge, breite, groesse)
+            raum = Raum(name)
+            teilraeume_num = int(input(f"Wie viele Teilräume hat der Raum '{name}'? "))
+            for _ in range(teilraeume_num):
+                laenge = float(input("Gebe die Länge eines Teilraums (in Metern) an: "))
+                breite = float(input("Gebe die Breite eines Teilraums (in Metern) an: "))
+                raum.add_teilraum(laenge, breite)
             alle_raeume.append(raum)
         except ValueError:
             print("Die Eingabe ist Falsch, bitte erneut eingeben.")
 
     return alle_raeume
 
+def raum_ausgeben(alle_raeume):
+    gesamtflaeche = sum(raum.groesse for raum in alle_raeume)
+    print(f"Dein Gebäude hat insgesamt {len(alle_raeume)} Räume und eine Gesamtfläche von {gesamtflaeche}m².")
 
-def raum_ausgeben(raeume, num):
-    print(f"Dein Gebäude hat {num}")
-
-    for i in range(num):
-        raum = raeume[i]
-        print(f"""\n
-        Der Name des Raumes lautet: {raum[0]}
-        Die länge beträgt: {raum[1]}
-        und die Breite beträgt: {raum[2]}.
-        Die Raumgröße ist: {raum[3]}
+    for raum in alle_raeume:
+        print(f"""
+        Raum: {raum.name}
+        Anzahl der Teilräume: {len(raum.teilraeume)}
+        Gesamtfläche: {raum.groesse}m²
         """)
 
-# print("Dein Gebäude hat " + raeume + " Rä)
-
 if __name__ == '__main__':
-    raeume = int(input("Hey Makler, Gebe die Anzahl an Räumen an welches das Gebäude hat: "))
+    raeume = int(input("Wie viele Räume hat das Gebäude?: "))
     alle_raeume = raum_abfrage(raeume)
-    raum_ausgeben(alle_raeume, raeume)
+    raum_ausgeben(alle_raeume)
